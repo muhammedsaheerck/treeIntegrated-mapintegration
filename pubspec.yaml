@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_maps_flutter: ^2.2.5
   geolocator: ^9.0.2
+  sliding_up_panel: ^2.0.0+1
+  swipeable_button_view:
 
 dev_dependencies:
   flutter_test:
