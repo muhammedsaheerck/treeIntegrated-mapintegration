@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:swipeable_button_view/swipeable_button_view.dart';
+
 import 'package:treetech/pressentation/core/core.dart';
 
 class ScreenMap extends StatelessWidget {
@@ -31,42 +32,43 @@ class ScreenMap extends StatelessWidget {
     return Scaffold(
         // backgroundColor: Colors.amber,
         appBar: AppBar(
-          leading: const Text("17mins"),
-          title: const Text("1.8 km"),
-          actions: const [Text("11:48 am")],
+          backgroundColor: Colors.white,
+          leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              )),
+          title: const Text(
+            "17mins",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          actions: [
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                "1.8 km",
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            width10,
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                "11:48 am",
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            width10
+          ],
         ),
-        body:
-            //  Stack(
-            //   children: [
-            //     SizedBox(
-            //       height: 400,
-            //       width: double.infinity,
-            //       child: GoogleMap(
-            //         initialCameraPosition: _kGoogle,
-            //         zoomControlsEnabled: false,
-            //         mapType: MapType.normal,
-            //         compassEnabled: true,
-            //         trafficEnabled: true,
-            //         onMapCreated: (GoogleMapController controller) async {
-            //           await getUserCurrentLocation();
-            //         },
-            //       ),
-            //     ),
-            //     SingleChildScrollView(
-            //       child: Padding(
-            //         padding: const EdgeInsets.only(top: 300),
-            //         child: Container(
-            //           decoration: BoxDecoration(
-            //             color: Colors.green,
-            //             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50))
-            //           ),
-            //           height: 700,
-            //         ),
-            //       ),
-            //     )
-            //   ],
-            // ),
-            SlidingUpPanel(
+        body: SlidingUpPanel(
           isDraggable: true,
           panel: Center(
               child: Padding(
@@ -163,6 +165,7 @@ class ScreenMap extends StatelessWidget {
                       Flexible(
                         flex: 1,
                         child: CircleAvatar(
+                          backgroundColor: Colors.grey,
                           radius: 15,
                           child: Image.asset(
                             "asset/man.png",
@@ -207,7 +210,45 @@ class ScreenMap extends StatelessWidget {
                     ],
                   ),
                 ),
-                SwipeableButtonView(onFinish: (){}, onWaitingProcess: (){}, activeColor: Colors.blue, buttonWidget: Container(), buttonText: "buttonText")
+                const SizedBox(
+                  height: 30,
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: SlideAction(
+                    elevation: 2,
+                    borderRadius: 10,
+                    sliderButtonIcon: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.blue,
+                    ),
+                    height: 40,
+                    sliderButtonIconPadding: 5,
+                    text: "Order Completed",
+                    textStyle: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                divider1,
+                const ListTile(
+                  leading: CircleAvatar(
+                      radius: 15,
+                      child: Icon(
+                        Icons.warning,
+                        size: 20,
+                      )),
+                  title: Text(
+                    "Report Issues about this order",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.blue,
+                  ),
+                ),
+                divider1
               ],
             ),
           )),

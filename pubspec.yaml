@@ -38,7 +38,7 @@ dependencies:
   google_maps_flutter: ^2.2.5
   geolocator: ^9.0.2
   sliding_up_panel: ^2.0.0+1
-  swipeable_button_view:
+  slide_to_act: any
 
 dev_dependencies:
   flutter_test:
