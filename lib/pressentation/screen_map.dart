@@ -1,31 +1,16 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:treetech/pressentation/core/core.dart';
 
 class ScreenMap extends StatelessWidget {
-  ScreenMap({super.key});
+  const ScreenMap({super.key});
   static const CameraPosition _kGoogle = CameraPosition(
     target: LatLng(10.1632, 76.6413),
     zoom: 14.4746,
   );
-
-// created method for getting user current product
-  Future getUserCurrentLocation() async {
-    await Geolocator.requestPermission()
-        .then((value) {})
-        .onError((error, stackTrace) async {
-      await Geolocator.requestPermission();
-    });
-    return await Geolocator.getCurrentPosition();
-  }
-
-  Completer<GoogleMapController> controllers = Completer();
 
   @override
   Widget build(BuildContext context) {
@@ -254,16 +239,13 @@ class ScreenMap extends StatelessWidget {
               ],
             ),
           )),
-          body: Center(
+          body: const Center(
             child: GoogleMap(
               initialCameraPosition: _kGoogle,
               zoomControlsEnabled: false,
               mapType: MapType.hybrid,
               compassEnabled: true,
               trafficEnabled: true,
-              onMapCreated: (GoogleMapController controller) async {
-                await getUserCurrentLocation();
-              },
             ),
           ),
         ));
