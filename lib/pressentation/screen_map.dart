@@ -28,18 +28,14 @@ class ScreenMap extends StatelessWidget {
               )),
           title: const Text(
             "17mins",
-            style: TextStyle(
-              color: Colors.black,
-            ),
+            style: TextStyle(color: Colors.black, fontSize: 16),
           ),
           actions: [
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text(
                 "1.8 km",
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
+                style: TextStyle(color: Colors.grey, fontSize: 14),
               ),
             ),
             width10,
@@ -47,9 +43,7 @@ class ScreenMap extends StatelessWidget {
               padding: EdgeInsets.only(top: 20),
               child: Text(
                 "11:48 am",
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
+                style: TextStyle(color: Colors.grey, fontSize: 14),
               ),
             ),
             width10
@@ -62,54 +56,54 @@ class ScreenMap extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 170, right: 170),
-                  child: Divider(
-                    thickness: 4,
-                    color: Colors.black,
-                  ),
+                Divider(
+                  height: 2,
+                  indent: 150,
+                  endIndent: 150,
+                  thickness: 4,
+                  color: Colors.grey.shade700,
                 ),
+                hight10,
                 Row(
                   children: const [
                     Icon(
                       Icons.place,
                       color: Colors.blue,
+                      size: 16,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Text(
                       "DELIVERY LOCATION",
-                      style: TextStyle(
-                        color: Colors.blue,
-                      ),
+                      style: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     SizedBox(
                       width: 100,
                     ),
-                    Text("#ODN000598"),
+                    Text(
+                      "#ODN000598",
+                      style: TextStyle(fontSize: 14),
+                    ),
                   ],
                 ),
                 hight10,
                 ListTile(
                   leading: Container(
-                      width: 100,
-                      height: 80,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40)),
-                      // width: 100,
-                      child: Image.asset(
-                        "asset/46310737_2102978689754530_2050410506572791808_n.jpg",
-                        fit: BoxFit.cover,
-                        // width: 100,
-                        // height: 100,
-                      )),
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                        image: const DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(
+                                "asset/46310737_2102978689754530_2050410506572791808_n.jpg")),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
                   title: const Text(
                     "Vattakarai,Chennavannavilai\nNagarcoil,Tamil Nadu 629002,india",
-                    style: TextStyle(fontSize: 15, color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ),
-                hight10,
                 divider1,
                 ListTile(
                   leading: Column(
@@ -127,18 +121,19 @@ class ScreenMap extends StatelessWidget {
                     children: [
                       Text(
                         "Payment Mode",
-                        style: TextStyle(color: Colors.grey.shade700),
+                        style: TextStyle(
+                            color: Colors.grey.shade700, fontSize: 15),
                       ),
                       hight10,
                       const Text("Cash on delivery",
-                          style: TextStyle(fontWeight: FontWeight.bold))
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15))
                     ],
                   ),
                 ),
                 divider1,
-                hight10,
                 Padding(
-                  padding: const EdgeInsets.only(right: 280),
+                  padding: const EdgeInsets.only(right: 255),
                   child: Text(
                     "Delivering to",
                     style: TextStyle(color: Colors.grey.shade700),
@@ -148,58 +143,52 @@ class ScreenMap extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
-                        flex: 1,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          radius: 15,
-                          child: Image.asset(
-                            "asset/man.png",
-                            width: 20,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Flexible(
-                          flex: 1,
-                          child: Text(
-                            "Anita",
-                            style: TextStyle(fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 6,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [
-                            CircleAvatar(
-                                radius: 15,
-                                child: Icon(
-                                  Icons.message,
-                                  size: 20,
-                                )),
-                            SizedBox(
-                              width: 20,
+                      Wrap(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.grey,
+                            radius: 14,
+                            child: Image.asset(
+                              "asset/man.png",
+                              width: 17,
+                              fit: BoxFit.fill,
                             ),
-                            CircleAvatar(
-                                radius: 15,
-                                child: Icon(
-                                  Icons.call,
-                                  size: 20,
-                                )),
-                          ],
-                        ),
-                      )
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              "Anita",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const [
+                          CircleAvatar(
+                              radius: 14,
+                              child: Icon(
+                                Icons.message,
+                                size: 17,
+                              )),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          CircleAvatar(
+                              radius: 14,
+                              child: Icon(
+                                Icons.call,
+                                size: 17,
+                              )),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                hight10,
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: SlideAction(
@@ -210,32 +199,38 @@ class ScreenMap extends StatelessWidget {
                       color: Colors.blue,
                     ),
                     height: 40,
-                    sliderButtonIconPadding: 5,
+                    sliderButtonIconPadding: 4,
                     text: "Order Completed",
-                    textStyle: TextStyle(fontSize: 20, color: Colors.white),
+                    textStyle: TextStyle(fontSize: 14, color: Colors.white),
                   ),
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 90,
                 ),
-                divider1,
+                const Divider(
+                  height: 0,
+                  thickness: 1,
+                ),
                 const ListTile(
                   leading: CircleAvatar(
-                      radius: 15,
+                      radius: 14,
                       child: Icon(
                         Icons.warning,
-                        size: 20,
+                        size: 17,
                       )),
                   title: Text(
                     "Report Issues about this order",
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.blue, fontSize: 14),
                   ),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.blue,
                   ),
                 ),
-                divider1
+                const Divider(
+                  height: 0,
+                  thickness: 1,
+                )
               ],
             ),
           )),
@@ -243,7 +238,7 @@ class ScreenMap extends StatelessWidget {
             child: GoogleMap(
               initialCameraPosition: _kGoogle,
               zoomControlsEnabled: false,
-              mapType: MapType.hybrid,
+              mapType: MapType.normal,
               compassEnabled: true,
               trafficEnabled: true,
             ),

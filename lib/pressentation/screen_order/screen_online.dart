@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:treetech/pressentation/screen_map.dart';
 
 class ScreenOnline extends StatelessWidget {
@@ -16,7 +14,7 @@ class ScreenOnline extends StatelessWidget {
           children: [
             Text(
               "Orders in Queue",
-              style: TextStyle(fontSize: 20, color: Colors.grey.shade600),
+              style: TextStyle(fontSize: 17, color: Colors.grey.shade600),
             ),
             const SizedBox(
               height: 10,
@@ -30,7 +28,7 @@ class ScreenOnline extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ScreenMap(),
+                          builder: (context) => const ScreenMap(),
                         )),
                     child: Card(
                         shape: RoundedRectangleBorder(
@@ -40,51 +38,46 @@ class ScreenOnline extends StatelessWidget {
                           child: Row(
                             children: [
                               Container(
-                                  width: 100,
-                                  height: 80,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(40)),
-                                  // width: 100,
-                                  child: Image.asset(
-                                    "asset/46310737_2102978689754530_2050410506572791808_n.jpg",
-                                    fit: BoxFit.cover,
-                                    // width: 100,
-                                    // height: 100,
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Row(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                    image: const DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage(
+                                            "asset/46310737_2102978689754530_2050410506572791808_n.jpg")),
+                                    borderRadius: BorderRadius.circular(10)),
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
                                       children: const [
                                         Text(
                                           "#ID1274623223",
                                           style: TextStyle(
-                                              fontSize: 17,
+                                              fontSize: 15,
                                               fontWeight: FontWeight.w400),
                                         ),
                                         SizedBox(
-                                          width: 60,
+                                          width: 70,
                                         ),
                                         Text(
                                           "₹1253",
                                           style: TextStyle(
-                                              fontSize: 17,
+                                              fontSize: 15,
                                               fontWeight: FontWeight.w400),
                                         )
                                       ],
                                     ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "Vattakarai,Chennavannavilai\nNagarcoil,Tamil Nadu 629002,india",
-                                      style: TextStyle(
-                                          fontSize: 15, color: Colors.grey),
-                                    )
-                                  ],
-                                ),
+                                  ),
+                                  const Text(
+                                    "Vattakarai,Chennavannavilai\nNagarcoil,Tamil Nadu 629002,india",
+                                    style: TextStyle(
+                                        fontSize: 14, color: Colors.grey),
+                                  )
+                                ],
                               )
                             ],
                           ),

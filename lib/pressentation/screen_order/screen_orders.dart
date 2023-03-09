@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:treetech/pressentation/screen_order/screen_offline.dart';
 import 'package:treetech/pressentation/screen_order/screen_online.dart';
 
 class ScreenOrders extends StatefulWidget {
-  ScreenOrders({super.key});
+  const ScreenOrders({super.key});
 
   @override
   State<ScreenOrders> createState() => _ScreenOrdersState();
@@ -31,17 +29,17 @@ class _ScreenOrdersState extends State<ScreenOrders>
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CircleAvatar(
-                  radius: 19,
+                  radius: 15,
                   backgroundColor: Colors.grey,
                   child: CircleAvatar(
-                    radius: 17,
+                    radius: 14,
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
                       backgroundColor: Colors.grey.shade400,
-                      radius: 15,
+                      radius: 13,
                       child: Image.asset(
                         "asset/man.png",
-                        width: 20,
+                        width: 15,
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -53,14 +51,14 @@ class _ScreenOrdersState extends State<ScreenOrders>
                 child: Icon(
                   Icons.android,
                   color: Colors.red,
-                  size: 30,
+                  size: 27,
                 ),
               ),
               title: Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
                 child: Container(
-                  width: 300,
-                  height: 35,
+                  width: 250,
+                  height: 27,
                   decoration: BoxDecoration(
                       color: Colors.grey.shade400,
                       borderRadius: BorderRadius.circular(40)),
@@ -74,7 +72,7 @@ class _ScreenOrdersState extends State<ScreenOrders>
                       labelPadding: const EdgeInsets.only(top: 5, bottom: 5),
                       indicatorColor: Colors.blue.shade700,
                       labelStyle: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.w400),
+                          fontSize: 14, fontWeight: FontWeight.w400),
                       tabs: const [
                         Text(
                           "Online",
